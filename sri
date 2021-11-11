@@ -1,0 +1,33 @@
+<center>
+	<div class="qpa_viewclaim_page menu_all_qpa" style="width: 95%; display: block;">
+<div style="font-size: 24px;font-weight: bold;color: black;background: #ecaf13;width: 95%;">VIEW CLAIM</div>
+		<center>
+			<table style="background-color: #566477; color: white; text-align: center; font-weight: bolder;font-size:16px; /* border-radius: 20px; */ width: 95%;" id="claim_tbl">
+				<tbody><tr>
+					<td>Patient Name(Like)</td>
+					<td>From DOS</td>
+					<td>To DOS</td>
+					<td>Patient Account Number</td>
+					<td>CPT</td>
+					<!-- <td>ICD10</td> -->
+				</tr>
+				<tr>
+					<td><input type="text" id="patient_name" class="inputtxt" oninput="this.value = this.value.toUpperCase()" onkeypress="return (event.charCode > 64 &amp;&amp; event.charCode < 91) || (event.charCode > 96 &amp;&amp; event.charCode < 123)" autocomplete="off"></td>
+					<td><input type="date" id="from_dos" class="inputtxt"></td>
+					<td><input type="date" id="to_dos" class="inputtxt"></td>
+					<td><input type="text" id="patient_accno" autocomplete="off" class="inputtxt"></td>
+					<td><input type="text" id="cpt" autocomplete="off" class="inputtxt"></td>
+					<td><!-- <input type="text" id="dxcode" autocomplete="off" class="inputtxt"> -->
+						<input type="hidden" name="ipaddress" id="ipaddress" class="inputtxt" value="0:0:0:0:0:0:0:1"></td>
+					<td><button onclick="viewclaim()">
+							<i class="fa fa-search fa-2x"></i>
+						</button></td>
+				</tr>
+			</tbody></table>
+		</center>
+		<br>
+
+
+		
+	</div>
+</center>
