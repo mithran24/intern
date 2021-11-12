@@ -1,0 +1,12 @@
+<center>
+        <table>
+         <tr>
+         <th style="width: 130px;">HIS Pend Bucket</th>
+		  <th style="width: 150px;">
+		     <select name="example_length" aria-controls="example" class="dropdownSelect"><option value="closed">Replied by me</option><option value=""></option><option value=""></option><option value=""></option></select>
+		  </th>
+		  <th  style="width: 30px;"><input  type = "checkbox"/></th>
+		  <th  style="width: 170px;">Work order(s) created by me</th>
+         </tr>
+        </table>
+        </center>
