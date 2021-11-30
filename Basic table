@@ -1,0 +1,41 @@
+<body>
+
+<div align="center" class="qpa_viewclaim_page menu_all_qpa" style="width: 95%; display: block;">
+<div align="center" style="font-size: 24px;font-weight: bold;color: black;background: #ecaf13;width: 100%;">Audit Queue</div>
+
+        <table>
+         <tr>
+         <th style="width: 130px;">Pending bucket</th>
+		  <th style="width: 150px;">
+		     <select name="example_length" aria-controls="example" class="dropdownSelect"><option value="closed">Closed</option><option value=""></option><option value=""></option><option value=""></option></select>
+		  </th>
+         </tr>
+        </table>
+		
+			<div class="container"
+				style="background-color: #eef1f8; border-radius: 20px; width: 70%">
+				<table
+					style="width: 100%; border: 1px #fff; background-color: #eef1f8; text-align: left;"
+					id="example8"
+					class="table table-striped table-bordered dt-responsive ">
+					<thead style="background-color: #566477; color: white;">
+					<tr>
+					  <th>Claimno</th>
+					  <th>bg ID</th>
+					  <th>Name</th>
+					  <th>PAN</th>
+					  <th>DOB</th>
+					  <th>DOS</th>
+					  <th>MRN</th>
+					  <th>Status</th>
+					  <th>Assigned User</th>
+					  <th>Account</th>
+					  <th>Error Category</th>
+					  <th>Audit Result</th>
+					  <th>View Details</th>
+					  
+					</tr>
+           </table>
+           </div>
+           </body>
+          
