@@ -1,0 +1,33 @@
+<script>
+
+	var contextPath="<%=request.getContextPath()%>";
+						 function examplelengthchange(){
+							 alert('change');
+							var a= $('.sele').val();
+							alert(a);
+							$.ajax({
+								   type : "POST",
+									url : contextPath + '/app/autoQueueTransaction/work_claimno',
+									dataType : 'json',
+									contentType: 'application/json; charset=utf-8',
+									data:{"option":a},
+									success : function(res)
+									{
+										if(res.errormessage == "No records found") 
+										{
+											console.log("not available");
+											
+										}
+											
+										else
+										{
+										
+										
+											
+										}
+									
+									}				
+								
+							});
+						 }
+             </script>
