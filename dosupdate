@@ -30,7 +30,20 @@
 <div align="center" class="qpa_viewclaim_page menu_all_qpa" style="width: 95%; display: block;">
 <div align="center" style="font-size: 24px;font-weight: bold;color: black;background: #ecaf13;width: 100%;">DOS UPDATE</div>
 
-        
+        <center>
+			<div class="container" style="background-color: #eef1f8; /* border-radius: 20px; */ width: 95%">
+			
+			<table>
+         <tr>
+         <th style="width: 130px;">HIS-Pending bucket</th>
+		  <th style="width: 150px;">
+		     <select name="example_length" aria-controls="example" class="dropdownSelect sele" onchange="examplelengthchange()">
+ <option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option></select>
+		  </th>
+		  <th  style="width: 30px;"><input  type = "checkbox"/></th>
+		  <th  style="width: 170px;">Work order(s) created by me</th>
+         </tr>
+        </table>
 		
 			<div class="container"
 				style="background-color: #eef1f8; border-radius: 20px; width: 70%">
