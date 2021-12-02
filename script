@@ -1,0 +1,8 @@
+<tbody class="tr_body">
+</tbody>
+for(let i =0;i<len;i++)
+			{
+		d = "<tr><td>"+i+"</td><td>"+i+"</td><td>"+i+"</td><td>"+i+"</td><td>"+i+"</td></tr>";
+		data = $(".tr_body");
+		data.append(d);
+			}
