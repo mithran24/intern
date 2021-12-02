@@ -1,0 +1,91 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<script src="${contextPath}/QPA/resources/js/jquery-1.10.2.js"></script>
+<script src="${contextPath}/QPA/resources/js/jquery.min.js"></script>
+<link href="${contextPath}/QPA/CSS/jquery-ui.css" rel="stylesheet">
+<script src="${contextPath}/QPA/resources/js/jquery-ui.js"></script>
+<link rel="stylesheet" href="${contextPath}/QPA/resources/library_Asset/dataTables.bootstrap.min.css">
+
+<script src="${contextPath}/QPA/resources/library_Asset/multiple-select.js"></script>
+<script
+	src="${contextPath}/QPA/resources/library_Asset/jquery.dataTables.js"></script>
+
+<link rel="stylesheet"
+	href="${contextPath}/QPA/resources/library_Asset/multi-select.css">
+<title>Insert title here</title>
+<link rel="stylesheet" type="text/css"
+	href="${contextPath}/QPA/CSS/medicalStyle.css">
+	<!-- Adding Font Awesome library -->
+<link rel="stylesheet" type="text/css"
+	href="${contextPath}/QPA/resources/library_Asset/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css"
+	href="${contextPath}/QPA/resources/library_Asset/jquery.dataTables.css">
+</head>
+<body>
+
+<div align="center" class="qpa_viewclaim_page menu_all_qpa" style="width: 95%; display: block;">
+<div align="center" style="font-size: 24px;font-weight: bold;color: black;background: #ecaf13;width: 100%;">DOS UPDATE</div>
+
+        
+		
+			<div class="container"
+				style="background-color: #eef1f8; border-radius: 20px; width: 70%">
+				<table
+					style="width: 100%; border: 1px #fff; background-color: #eef1f8; text-align: left;"
+					id="example8"
+					class="table table-striped table-bordered dt-responsive ">
+					<thead style="background-color: #566477; color: white;">
+					<tr>
+					  <th>dos</th>
+					  <th>patsite</th>
+					  <th>scandat</th>
+					  <th>pattype</th>
+					  <th>patstatus</th>
+					</tr>
+					 <tbody class="tr_body">
+					</tbody>
+           </table>
+           </div>
+
+
+</body>
+<script>
+	var contextPath="<%=request.getContextPath()%>";
+	 function examplelengthchange(){
+		var a= $('.sele').val();
+		$(".tr_body").empty();
+		$.ajax({
+			   type : "POST",
+				url : contextPath + '/app/autoQueueTransaction/dosupdate',
+				dataType : 'json',
+				contentType: 'application/json; charset=utf-8',
+				data:{"option":a},
+				success : function(res)
+				{
+					if(res.errormessage == "success") 
+					{
+						for(let i =0;i<res.work_claimno.length;i++)
+						{
+							d = "<tr><td>"+res.work_claimno[i].dos+"</td><td>"+res.work_claimno[i].patsite+"</td><td>"+res.work_claimno[i].scandat+"</td><td>"+res.work_claimno[i].pattype+"</td><td>"+res.work_claimno[i].patstatus+"</td></tr>";
+							data = $(".tr_body");
+							data.append(d);
+						}
+						
+					}
+						
+					else
+					{
+							alert("Something went wrong !!");									
+					}
+				
+				}				
+			
+		});
+	 }
+
+	</script>
+</html>
