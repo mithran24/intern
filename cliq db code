@@ -1,0 +1,20 @@
+UserVO uservo = new UserVO();
+  Connection con = null;
+	
+  ResultSet rs=null;
+  Statement stmt = null; 
+String mrn="M1";
+String sites="sites";
+try{
+ Class.forName("com.mysql.jdbc.Driver");
+    con=(Connection) DriverManager.getConnection("jdbc:mysql://10.50.1.42:3306/test","root","root");
+    
+    stmt = (Statement) con.createStatement();  
+    rs = stmt.executeQuery("select * from Students_Intenship where mrn='"+mrn+"' and patsite='"+sites+"' ");
+    while (rs.next()) {
+     // retrieve and print the values for the current row
+     // System.out.println("ROW = " +rs.getInt(1) );
+     
+    
+    }
+}
