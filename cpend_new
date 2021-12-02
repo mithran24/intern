@@ -52,26 +52,68 @@
 					class="table table-striped table-bordered dt-responsive ">
 					<thead style="background-color: #566477; color: white;">
 					<tr>
-					  <th>WO...</th>
-					  <th>Acc Number</th>
+					  <th>WOID</th>
+					  <th>Patien AccountNumber</th>
 					  <th>Claim No</th>
 					  <th>Reported Date</th>
 					  <th>Reported User</th>
 					  <th>Assigned To</th>
 					  <th>Last Updated</th> 
 					</tr>
+					<tbody class="tr_body">
+                    </tbody>
 					<tbody id="viewclaim_tbl">
 					<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty" style = "width: 30px;">No Records Found</td></tr></tbody>
            </table>
-</center>
+	<!-- 		<div>
+<br>
+<center><label><b>HIS Pend Bucket </b><div><select name="example_length" aria-controls="example" class="dropdownSelect"><option value="closed">Replied by me</option><option value=""></option><option value=""></option><option value=""></option></select></div></label><input  type = "checkbox"/>
+	   	<label><b>Work order(s) created by me</b></label></center> 
+</div>-->
+<br>
+<!-- 
+     <center>
+        <table>
+         <tr>
+         <th style="width: 130px;">HIS Pend Bucket</th>
+		  <th style="width: 150px;">
+		     <select name="example_length" aria-controls="example" class="dropdownSelect"><option value="closed">Replied by me</option><option value=""></option><option value=""></option><option value=""></option></select>
+		  </th>
+		  <th  style="width: 30px;"><input  type = "checkbox"/></th>
+		  <th  style="width: 170px;">Work order(s) created by me</th>
+         </tr>
+        </table>
+        </center> 
+        <br>
+				<div id="example_wrapper" class="dataTables_wrapper no-footer"><div class="dataTables_length" id="example_length"></div><div id="example_filter" class="dataTables_filter"></div><table style="width: 100%; border: 1px; background-color: rgb(238, 241, 248); text-align: left;" id="example" class="table table-striped table-bordered dt-responsive nowrap dataTable no-footer" role="grid" aria-describedby="example_info">
+					<thead style="background-color: #566477; color: white; text-align: left;">
+					    <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Claim no: activate to sort column descending" style="width: 65px;">WO...</th>
+						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="bg ID: activate to sort column ascending" style="width: 65px;">Patient Name</th>
+						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Name: activate to sort column ascending" style="width: 65px;">Acc Number</th>
+						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="PAN: activate to sort column ascending" style="width: 65px;">Claim No</th>
+						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="DOB: activate to sort column ascending" style="width: 65px;">Reported Date</th>
+						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="DOS: activate to sort column ascending" style="width: 65px;">Reported User</th>
+						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="MRN: activate to sort column ascending" style="width: 65px;">Assigned To</th>
+						<th class="sorting" tabindex="0" aria-controls="example" rowspan="1" colspan="1" aria-label="Status: activate to sort column ascending" style="width: 65px;">Last Updated</th>
+						</tr>
+					</thead>
+					<tbody id="viewclaim_tbl">
+					<tr class="odd"><td valign="top" colspan="8" class="dataTables_empty" style = "width: 30px;">No Records Found</td></tr></tbody>
+
+				</table><div class="dataTables_info" id="example_info" role="status" aria-live="polite">Showing 0 to 0 of 0 entries</div><div class="dataTables_paginate paging_simple_numbers" id="example_paginate"><a class="paginate_button previous disabled" aria-controls="example" data-dt-idx="0" tabindex="-1" id="example_previous">Previous</a><span></span><a class="paginate_button next" aria-controls="example" data-dt-idx="1" tabindex="0" id="example_next">Next</a></div></div>
+			</div>
+			-->
+		</center>
 	</div>
 	</center>
 	<script>
 	var contextPath="<%=request.getContextPath()%>";
 	 function examplelengthchange(){
-		 alert('change');
 		var a= $('.sele').val();
-		alert(a);
+		$(".tr_body").empty();
+		if(a >= 0){
+			$("#viewclaim_tbl").hide();
+		}
 		$.ajax({
 			   type : "POST",
 				url : contextPath + '/app/autoQueueTransaction/cpend',
@@ -82,13 +124,18 @@
 				{
 					if(res.errormessage == "success") 
 					{
-						
+						for(let i =0;i<res.work_claimno.length;i++)
+						{
+							d = "<tr><td>"+res.work_claimno[i].woid+"</td><td>"+res.work_claimno[i].patientaccno+"</td><td>"+res.work_claimno[i].claimno+"</td><td>"+res.work_claimno[i].reportdate+"</td><td>"+res.work_claimno[i].reportuser+"</td><td>"+res.work_claimno[i].assignedto+"</td><td>"+res.work_claimno[i].lastupdated+"</td></tr>";
+							data = $(".tr_body");
+							data.append(d);
+						}
 						
 					}
 						
 					else
 					{
-																
+							alert("Something went wrong !!");									
 					}
 				
 				}				
