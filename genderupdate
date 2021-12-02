@@ -1,0 +1,100 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<script src="${contextPath}/resources/library_Asset/jquery-1.9.1.js"></script>
+
+<script src="${contextPath}/resources/library_Asset/multiple-select.js"></script>
+
+<link rel="stylesheet"
+	href="${contextPath}/resources/library_Asset/multi-select.css">
+<link rel="stylesheet"
+	href="${contextPath}/resources/library_Asset/bootstrap.min.css">
+<link rel="stylesheet"
+	href="${contextPath}/resources/library_Asset/bootstrap.min.css">
+<link rel="stylesheet"
+	href="${contextPath}/CSS/kendo.blueOpal.min.css">
+<link rel="stylesheet"
+	href="${contextPath}/CSS/kendo.common.min.css">	
+
+
+<!-- Datatable CDN's -->
+<!-- Adding External CSS and JS -->
+
+<%-- <link rel="stylesheet" type="text/css" href="${contextPath}/resources/DD/style.css"> --%>
+
+<!-- Adding Font Awesome library -->
+<link rel="stylesheet" type="text/css"
+	href="${contextPath}/resources/library_Asset/font-awesome-4.7.0/css/font-awesome.min.css">
+<%-- <link rel="stylesheet" type="text/css" href="${contextPath}/resources/library_Asset/jstree.min.css"> --%>
+<!-- Adding Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
+	rel="stylesheet">
+<!-- Date Picker Plug-in -->
+<link rel="stylesheet" type="text/css"
+	href="${contextPath}/resources/library_Asset/multi_datePick/css/jquery.datepick.css">
+
+
+<link rel="stylesheet" type="text/css"
+	href="${contextPath}/resources/library_Asset/jquery.dataTables.css">
+
+<script type="text/javascript" charset="utf8"
+	src="${contextPath}/resources/library_Asset/jquery.dataTables.js"></script>
+<link rel="stylesheet" type="text/css"  
+	href="${contextPath}/CSS/medicalStyle.css">
+
+ <script src="${contextPath}/resources/library_Asset/sweetalert.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="${contextPath}/resources/library_Asset/sweetalert.css">
+</head>
+<body>
+
+	<div align="center" class="qpa_viewclaim_page menu_all_qpa" style="width: 95%; display: block;">
+<div align="center" style="font-size: 24px;font-weight: bold;color: black;background: #ecaf13;width: 95%; height: 5+0px">GENDER UPDATE</div>
+	
+			<table style="background-color: #566477; color: white; font-weight: bolder;font-size:16px; /* border-radius: 20px; */ width: 95%;" id="claim_tbl">
+				<tbody><tr>
+				
+					<td>Claim no</td>
+					
+					<td> <input name="name" type="text" value=""></td>
+					
+					
+				</tr>
+				<tr>
+				</tr>
+				<tr>
+					<td>Gender</td>
+					<td>
+					<select name="PrimarySubscriberGender" style= " width:16%;height:23px;">
+											 <option value="select">Select</option> 
+											<option value="F">Female</option>
+											<option value="M">Male</option>
+											<option value="U">Unknown</option></select>
+											</td>
+					
+				</tr>
+				<tr></tr>
+				<tr>
+				<td></td>
+				<td>
+				<input type="button" value="update">
+				
+				
+				<input type="button" value="clear" style="margin-left:5px;">
+				</td>
+				</tr>
+			</tbody></table>
+		
+		<br>
+
+
+	</div>		
+
+
+						
+</body>
+</html>
